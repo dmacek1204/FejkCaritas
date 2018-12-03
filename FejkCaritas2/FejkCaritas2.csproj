@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
@@ -85,9 +91,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Configurations\CitizenshipConfiguration.cs" />
+    <Compile Include="Configurations\ContractConfiguration.cs" />
+    <Compile Include="Configurations\DocumentConfiguration.cs" />
+    <Compile Include="Configurations\DocumentTypeConfiguration.cs" />
+    <Compile Include="Configurations\ExpenseConfiguration.cs" />
+    <Compile Include="Configurations\ExpenseTypeConfiguration.cs" />
+    <Compile Include="Configurations\VolunteeringHoursConfiguration.cs" />
+    <Compile Include="Configurations\SexConfiguration.cs" />
+    <Compile Include="Configurations\VolunteerConfiguration.cs" />
+    <Compile Include="Contexts\VolunteerContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812031310511_InitialModel.cs" />
+    <Compile Include="Migrations\201812031310511_InitialModel.Designer.cs">
+      <DependentUpon>201812031310511_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812031409476_AddingConstraints.cs" />
+    <Compile Include="Migrations\201812031409476_AddingConstraints.Designer.cs">
+      <DependentUpon>201812031409476_AddingConstraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Citizenship.cs" />
+    <Compile Include="Models\Contract.cs" />
+    <Compile Include="Models\Document.cs" />
+    <Compile Include="Models\DocumentType.cs" />
+    <Compile Include="Models\Expense.cs" />
+    <Compile Include="Models\ExpenseType.cs" />
+    <Compile Include="Models\Sex.cs" />
+    <Compile Include="Models\Volunteer.cs" />
+    <Compile Include="Models\VolunteeringHours.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -102,7 +136,14 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812031310511_InitialModel.resx">
+      <DependentUpon>201812031310511_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812031409476_AddingConstraints.resx">
+      <DependentUpon>201812031409476_AddingConstraints.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
