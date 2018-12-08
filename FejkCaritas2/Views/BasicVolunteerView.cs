@@ -1,10 +1,12 @@
-﻿using System;
+﻿using FejkCaritas.Models;
+using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.Linq;
+using System.Web;
 
-namespace FejkCaritas.Models
+namespace FejkCaritas2.Views
 {
-    public class Volunteer
+    public class BasicVolunteerView
     {
         public int ID { get; set; }
         public string FirstName { get; set; }
@@ -14,15 +16,10 @@ namespace FejkCaritas.Models
         public string OIB { get; set; }
         public DateTime Birthday { get; set; }
         public Nullable<int> SexID { get; set; }
-        public virtual Sex Sex { get; set; }
+        public Sex Sex { get; set; }
         public bool PotentialVolunteer { get; set; }
         public bool OutsideVolunteer { get; set; }
-        public ICollection<VolunteeringHours> VolunteeringHours { get; set; }
-        public ICollection<Document> Documents { get; set; }
-        public ICollection<Expense> Expenses { get; set; }
-        public ICollection<Contract> Contracts { get; set; }
-        public virtual Citizenship Citizenship { get; set; }
+        public Citizenship Citizenship { get; set; }
         public Nullable<int> CitizenshipID { get; set; }
-
     }
 }
