@@ -17,11 +17,19 @@ namespace FejkCaritas2.Services
             this._context = new VolunteerContext();
         }
 
-        public List<Volunteer> GetVolunteerCollection()
+        public List<Volunteer> GetVolunteerCollection(int pageIndex, int pageSize)
         {
             var query = _context.Volunteers.OrderBy(v => v.ID);
 
-            return query.ToList();
+            var paginatedQuery = query.Skip(pageIndex * pageSize).Take(pageSize);
+
+            return paginatedQuery.ToList();
+        }
+
+        public Volunteer GetVolunteer(int ID)
+        {
+            var query = _context.Volunteers.SingleOrDefault(v => v.ID == ID);
+            return query;
         }
     }
 }

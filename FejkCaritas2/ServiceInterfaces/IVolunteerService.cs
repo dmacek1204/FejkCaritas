@@ -9,6 +9,7 @@ namespace FejkCaritas2.ServiceInterfaces
 {
     public interface IVolunteerService
     {
-        List<Volunteer> GetVolunteerCollection();
+        List<Volunteer> GetVolunteerCollection(int pageIndex, int pageSize);
+        Volunteer GetVolunteer(int ID);
     }
 }

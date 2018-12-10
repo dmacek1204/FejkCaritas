@@ -134,6 +134,8 @@
     <Compile Include="ServiceInterfaces\IVolunteerService.cs" />
     <Compile Include="Services\VolunteerService.cs" />
     <Compile Include="Views\BasicVolunteerView.cs" />
+    <Compile Include="Views\CitizenshipView.cs" />
+    <Compile Include="Views\SexView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

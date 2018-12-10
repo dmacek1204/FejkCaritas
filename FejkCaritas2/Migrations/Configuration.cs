@@ -67,6 +67,66 @@
                     Sex = new Sex { ID = 1, Name = "Muško" },
                     OutsideVolunteer = true,
                     PotentialVolunteer = false,
+                }, new Volunteer
+                {
+                ID = 3,
+                    Birthday = new DateTime(1957, 4, 18),
+                    CitizenshipID = 2,
+                    Citizenship = new Citizenship { ID = 2, Name = "Njemačko" },
+                    OIB = "11111111125",
+                    FirstName = "Gogsan1",
+                    LastName = "Plogsan1",
+                    Username = "GogoPologo",
+                    SexID = 1,
+                    Sex = new Sex { ID = 1, Name = "Muško" },
+                    OutsideVolunteer = true,
+                    PotentialVolunteer = true,
+                },
+                new Volunteer
+                {
+                    ID = 4,
+                    Birthday = new DateTime(1950, 7, 16),
+                    CitizenshipID = 1,
+                    Citizenship = new Citizenship { ID = 2, Name = "Hrvatsko" },
+                    OIB = "12345678901",
+                    FirstName = "Gospon",
+                    LastName = "Programer",
+                    Username = "bokKoka",
+                    SexID = 1,
+                    Sex = new Sex { ID = 1, Name = "Muško" },
+                    OutsideVolunteer = false,
+                    PotentialVolunteer = false,
+                },
+                new Volunteer
+                {
+                    ID = 5,
+                    Birthday = new DateTime(2001, 7, 8),
+                    CitizenshipID = 2,
+                    Citizenship = new Citizenship { ID = 2, Name = "Njemačko" },
+                    OIB = "13467985234",
+                    FirstName = "Mirko",
+                    LastName = "Hortag",
+                    Username = "mirkec",
+                    SexID = 1,
+                    Sex = new Sex { ID = 1, Name = "Muško" },
+                    OutsideVolunteer = true,
+                    PotentialVolunteer = false,
+                    Email = "jaVolimPero@burek.com"
+                },
+                new Volunteer
+                {
+                    ID = 6,
+                    Birthday = new DateTime(1998, 2, 17),
+                    CitizenshipID = 2,
+                    Citizenship = new Citizenship { ID = 2, Name = "Njemačko" },
+                    OIB = "98765432152",
+                    FirstName = "Luka",
+                    LastName = "Toni",
+                    Username = "Peperoni",
+                    SexID = 1,
+                    Sex = new Sex { ID = 1, Name = "Muško" },
+                    OutsideVolunteer = true,
+                    PotentialVolunteer = false,
                 });
         }
     }

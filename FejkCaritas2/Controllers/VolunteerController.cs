@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace FejkCaritas2.Controllers
@@ -24,17 +25,24 @@ namespace FejkCaritas2.Controllers
         }
 
         // GET api/<controller>
-        public IEnumerable<BasicVolunteerView> Get()
+        [HttpGet]
+        public IHttpActionResult Get(string pageIndex, string pageSize)
         {
-            var result = _service.GetVolunteerCollection();
+            var result = _service.GetVolunteerCollection(Int32.Parse(pageIndex), Int32.Parse(pageSize));
             var response = _mapper.MapVolunteerCollectionToBasicVolunteerCollection(result);
-            return response;
+            return Ok(response);
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public IHttpActionResult GetVolunteer(int id)
         {
-            return "value";
+            var result =  _service.GetVolunteer(id);
+            if(result == null)
+            {
+                return BadRequest("Not found.");
+            }
+            var response = _mapper.MapVolunteerToBasicVolunteer(result);
+            return Ok(response);
         }
 
         // POST api/<controller>

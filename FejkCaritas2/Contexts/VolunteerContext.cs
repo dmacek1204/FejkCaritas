@@ -12,6 +12,7 @@ namespace FejkCaritas.Models
             : base("name=DefaultConnection")
         {
             Database.SetInitializer<VolunteerContext>(new DropCreateDatabaseIfModelChanges<VolunteerContext>());
+            this.Configuration.LazyLoadingEnabled = true;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

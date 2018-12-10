@@ -1,9 +1,6 @@
 ﻿using FejkCaritas.Models;
 using FejkCaritas2.Views;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace FejkCaritas2.Mappers
 {
@@ -18,20 +15,28 @@ namespace FejkCaritas2.Mappers
                 LastName = volunteer.LastName,
                 OIB = volunteer.OIB,
                 Birthday = volunteer.Birthday,
-                Citizenship = volunteer.Citizenship,
+                Citizenship = new CitizenshipView()
+                {
+                    ID = volunteer.Citizenship.ID,
+                    Name = volunteer.Citizenship.Name
+                },
                 Username = volunteer.Username,
-                Sex = volunteer.Sex,
+                Sex = new SexView()
+                {
+                    ID = volunteer.Sex.ID,
+                    Name = volunteer.Sex.Name
+                },
                 Email = volunteer.Email,
                 PotentialVolunteer = volunteer.PotentialVolunteer,
                 OutsideVolunteer = volunteer.OutsideVolunteer
             };
             return result;
-        } 
-        
+        }
+
         public IEnumerable<BasicVolunteerView> MapVolunteerCollectionToBasicVolunteerCollection(IEnumerable<Volunteer> volunteerCollection)
         {
             var result = new List<BasicVolunteerView>();
-            foreach(Volunteer volunteer in volunteerCollection)
+            foreach (Volunteer volunteer in volunteerCollection)
             {
                 var basicVolunteer = this.MapVolunteerToBasicVolunteer(volunteer);
                 result.Add(basicVolunteer);

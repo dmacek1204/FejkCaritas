@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace FejkCaritas.Models
 {
@@ -8,6 +6,7 @@ namespace FejkCaritas.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
+
         public ICollection<Volunteer> Volunteers { get; set; }
     }
 }
