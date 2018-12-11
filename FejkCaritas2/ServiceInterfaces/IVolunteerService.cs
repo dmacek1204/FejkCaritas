@@ -11,5 +11,6 @@ namespace FejkCaritas2.ServiceInterfaces
     {
         List<Volunteer> GetVolunteerCollection(int pageIndex, int pageSize, string sortColumn, string sortOrder);
         Volunteer GetVolunteer(int ID);
+        int GetVolunteerCount();
     }
 }

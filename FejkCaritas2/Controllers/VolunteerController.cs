@@ -33,6 +33,14 @@ namespace FejkCaritas2.Controllers
             return Ok(response);
         }
 
+        [HttpGet]
+        [Route("api/Volunteer/Count")]
+        public IHttpActionResult GetVolunteerCount()
+        {
+            var result = _service.GetVolunteerCount();
+            return Ok(result);
+        }
+
         // GET api/<controller>/5
         public IHttpActionResult GetVolunteer(int id)
         {

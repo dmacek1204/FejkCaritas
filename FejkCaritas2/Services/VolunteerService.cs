@@ -14,6 +14,12 @@ namespace FejkCaritas2.Services
             this._context = new VolunteerContext();
         }
 
+        public int GetVolunteerCount()
+        {
+            var query = _context.Volunteers.Count();
+            return query;
+        }
+
         public List<Volunteer> GetVolunteerCollection(int pageIndex, int pageSize, string sortColumn, string sortOrder)
         {
             var query = SortVolunteerCollection(sortColumn, sortOrder);
