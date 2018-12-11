@@ -19,6 +19,7 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+            #region Seed
             context.Sexes.AddOrUpdate(
                 new Sex { ID = 1, Name = "Muško" },
                 new Sex { ID = 2, Name = "Žensko" });
@@ -128,6 +129,7 @@
                     OutsideVolunteer = true,
                     PotentialVolunteer = false,
                 });
+            #endregion
         }
     }
 }

@@ -26,9 +26,9 @@ namespace FejkCaritas2.Controllers
 
         // GET api/<controller>
         [HttpGet]
-        public IHttpActionResult Get(string pageIndex, string pageSize)
+        public IHttpActionResult Get(string pageIndex, string pageSize, string sortColumn, string sortOrder)
         {
-            var result = _service.GetVolunteerCollection(Int32.Parse(pageIndex), Int32.Parse(pageSize));
+            var result = _service.GetVolunteerCollection(Int32.Parse(pageIndex), Int32.Parse(pageSize), sortColumn, sortOrder);
             var response = _mapper.MapVolunteerCollectionToBasicVolunteerCollection(result);
             return Ok(response);
         }
