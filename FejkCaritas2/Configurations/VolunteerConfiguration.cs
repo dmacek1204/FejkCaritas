@@ -42,6 +42,8 @@ namespace FejkCaritas.Models
                 .WithRequired(v => v.Volunteer)
                 .HasForeignKey(v => v.VolunteerID)
                 .WillCascadeOnDelete();
+
+            HasIndex(v => v.OIB).IsUnique();
         }
     }
 }

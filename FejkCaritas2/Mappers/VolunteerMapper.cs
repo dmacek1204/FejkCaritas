@@ -44,5 +44,24 @@ namespace FejkCaritas2.Mappers
 
             return result;
         }
+
+        public Volunteer MapVolunteerViewToVolunteer(BasicVolunteerView view)
+        {
+            var result = new Volunteer()
+            {
+                ID = 0,
+                FirstName = view.FirstName,
+                LastName = view.LastName,
+                OIB = view.OIB,
+                Birthday = view.Birthday,
+                PotentialVolunteer = view.PotentialVolunteer,
+                OutsideVolunteer = view.OutsideVolunteer,
+                CitizenshipID = view.Citizenship.ID,
+                SexID = view.Sex.ID,
+                Email = view.Email,
+                Username = view.Username
+            };
+            return result;
+        }
     }
 }

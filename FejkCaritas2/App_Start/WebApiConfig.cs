@@ -13,10 +13,9 @@ namespace FejkCaritas2
             config.EnableCors(cors);
             var jsonFormatter = config.Formatters.JsonFormatter;
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            jsonFormatter.UseDataContractJsonSerializer = false;
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             jsonFormatter.SerializerSettings.DateTimeZoneHandling = Newtonsoft.Json.DateTimeZoneHandling.Utc;
-            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling
-                = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             // Web API routes
             config.MapHttpAttributeRoutes();
 

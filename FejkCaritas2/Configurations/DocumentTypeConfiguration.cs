@@ -6,10 +6,13 @@ public class DocumentTypeConfiguration : EntityTypeConfiguration<DocumentType>
     {
         HasKey(d => d.ID);
         Property(d => d.Name)
+            .HasMaxLength(250)
             .IsRequired();
 
         HasMany(d => d.Documents)
             .WithRequired(d => d.DocumentType)
             .HasForeignKey(d => d.DocumentTypeID);
+
+        HasIndex(d => d.Name).IsUnique();
     }
 }

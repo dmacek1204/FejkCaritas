@@ -1,5 +1,6 @@
 ﻿using FejkCaritas.Models;
 using FejkCaritas2.ServiceInterfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -67,6 +68,20 @@ namespace FejkCaritas2.Services
         {
             var query = _context.Volunteers.SingleOrDefault(v => v.ID == ID);
             return query;
+        }
+
+        public bool AddVolunteer(Volunteer volunteer)
+        {
+            try
+            {
+                _context.Volunteers.Add(volunteer);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
     }
 }

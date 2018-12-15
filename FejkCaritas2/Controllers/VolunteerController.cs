@@ -16,12 +16,12 @@ namespace FejkCaritas2.Controllers
     public class VolunteerController : ApiController
     {
         private IVolunteerService _service;
-        private VolunteerMapper _mapper;
+        private VolunteerMapper _volunteerMapper;
 
         public VolunteerController()
         {
             this._service = new VolunteerService();
-            this._mapper = new VolunteerMapper();
+            this._volunteerMapper = new VolunteerMapper();
         }
 
         // GET api/<controller>
@@ -29,7 +29,7 @@ namespace FejkCaritas2.Controllers
         public IHttpActionResult Get(string pageIndex, string pageSize, string sortColumn, string sortOrder)
         {
             var result = _service.GetVolunteerCollection(Int32.Parse(pageIndex), Int32.Parse(pageSize), sortColumn, sortOrder);
-            var response = _mapper.MapVolunteerCollectionToBasicVolunteerCollection(result);
+            var response = _volunteerMapper.MapVolunteerCollectionToBasicVolunteerCollection(result);
             return Ok(response);
         }
 
@@ -49,13 +49,23 @@ namespace FejkCaritas2.Controllers
             {
                 return BadRequest("Not found.");
             }
-            var response = _mapper.MapVolunteerToBasicVolunteer(result);
+            var response = _volunteerMapper.MapVolunteerToBasicVolunteer(result);
             return Ok(response);
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public IHttpActionResult PostVolunteer([FromBody] BasicVolunteerView volunteer)
         {
+            var model = _volunteerMapper.MapVolunteerViewToVolunteer(volunteer);
+            var result = _service.AddVolunteer(model);
+            if (result)
+            {
+                return Ok();
+            }
+            else
+            {
+                return InternalServerError();
+            }
         }
 
         // PUT api/<controller>/5

@@ -107,10 +107,12 @@
     <Compile Include="Configurations\SexConfiguration.cs" />
     <Compile Include="Configurations\VolunteerConfiguration.cs" />
     <Compile Include="Contexts\VolunteerContext.cs" />
+    <Compile Include="Controllers\CatalogueController.cs" />
     <Compile Include="Controllers\VolunteerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\CatalogueMapper.cs" />
     <Compile Include="Mappers\VolunteerMapper.cs" />
     <Compile Include="Migrations\201812031310511_InitialModel.cs" />
     <Compile Include="Migrations\201812031310511_InitialModel.Designer.cs">
@@ -119,6 +121,10 @@
     <Compile Include="Migrations\201812031409476_AddingConstraints.cs" />
     <Compile Include="Migrations\201812031409476_AddingConstraints.Designer.cs">
       <DependentUpon>201812031409476_AddingConstraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812141021533_UniqueConstraintsAdd.cs" />
+    <Compile Include="Migrations\201812141021533_UniqueConstraintsAdd.Designer.cs">
+      <DependentUpon>201812141021533_UniqueConstraintsAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Citizenship.cs" />
@@ -132,6 +138,7 @@
     <Compile Include="Models\VolunteeringHours.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceInterfaces\IVolunteerService.cs" />
+    <Compile Include="Services\CatalogueService.cs" />
     <Compile Include="Services\VolunteerService.cs" />
     <Compile Include="Views\BasicVolunteerView.cs" />
     <Compile Include="Views\CitizenshipView.cs" />
@@ -155,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812031409476_AddingConstraints.resx">
       <DependentUpon>201812031409476_AddingConstraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812141021533_UniqueConstraintsAdd.resx">
+      <DependentUpon>201812141021533_UniqueConstraintsAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
