@@ -1,9 +1,6 @@
 ﻿using FejkCaritas.Models;
-using System;
+using FejkCaritas2.Filters;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FejkCaritas2.ServiceInterfaces
 {
@@ -13,5 +10,6 @@ namespace FejkCaritas2.ServiceInterfaces
         Volunteer GetVolunteer(int ID);
         int GetVolunteerCount();
         bool AddVolunteer(Volunteer volunteer);
+        IEnumerable<Volunteer> Search(VolunteerFilter filter, int pageIndex, int pageSize, string sortColumn, string sortOrder);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FejkCaritas.Models;
+using FejkCaritas2.Filters;
 using FejkCaritas2.Mappers;
 using FejkCaritas2.ServiceInterfaces;
 using FejkCaritas2.Services;
@@ -22,6 +23,15 @@ namespace FejkCaritas2.Controllers
         {
             this._service = new VolunteerService();
             this._volunteerMapper = new VolunteerMapper();
+        }
+
+        [HttpGet]
+        [Route("api/Volunteer/Search")]
+        public IHttpActionResult Search([FromUri] VolunteerFilter filter, int pageSize, int pageIndex, string sortOrder, string sortColumn)
+        {
+            var result = _service.Search(filter, pageIndex, pageSize, sortColumn, sortOrder);
+            var response = _volunteerMapper.MapVolunteerCollectionToBasicVolunteerCollection(result);
+            return Ok(response);
         }
 
         // GET api/<controller>

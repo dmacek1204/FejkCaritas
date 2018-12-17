@@ -109,6 +109,7 @@
     <Compile Include="Contexts\VolunteerContext.cs" />
     <Compile Include="Controllers\CatalogueController.cs" />
     <Compile Include="Controllers\VolunteerController.cs" />
+    <Compile Include="Filters\VolunteerFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
