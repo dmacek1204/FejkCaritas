@@ -29,8 +29,14 @@ namespace FejkCaritas2.Controllers
         [Route("api/Volunteer/Search")]
         public IHttpActionResult Search([FromUri] VolunteerFilter filter, int pageSize, int pageIndex, string sortOrder, string sortColumn)
         {
-            var result = _service.Search(filter, pageIndex, pageSize, sortColumn, sortOrder);
-            var response = _volunteerMapper.MapVolunteerCollectionToBasicVolunteerCollection(result);
+            var totalCount = 0;
+            var result = _service.Search(filter, pageIndex, pageSize, sortColumn, sortOrder, out totalCount);
+            var data = _volunteerMapper.MapVolunteerCollectionToBasicVolunteerCollection(result);
+            var response = new FilterResponse()
+            {
+                data = data,
+                totalCount = totalCount
+            };
             return Ok(response);
         }
 
@@ -70,7 +76,7 @@ namespace FejkCaritas2.Controllers
             var result = _service.AddVolunteer(model);
             if (result)
             {
-                return Ok();
+                return Ok(result);
             }
             else
             {
@@ -79,13 +85,33 @@ namespace FejkCaritas2.Controllers
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public IHttpActionResult Put([FromBody] BasicVolunteerView volunteer)
         {
+            var model = _volunteerMapper.MapVolunteerViewToVolunteer(volunteer);
+            var result = _service.UpdateVolunteer(model);
+            if (result)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return InternalServerError();
+            }
         }
 
         // DELETE api/<controller>/5
-        public void Delete(int id)
+        [HttpDelete]
+        public IHttpActionResult Delete(int id)
         {
+           var result = _service.DeleteVolunteer(id);
+            if (result)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return InternalServerError();
+            }
         }
     }
 }

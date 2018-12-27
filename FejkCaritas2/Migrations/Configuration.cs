@@ -36,7 +36,21 @@
                 new Citizenship { ID = 1, Name = "Hrvatsko" },
                 new Citizenship { ID = 2, Name = "Njemačko" },
                 new Citizenship { ID = 3, Name = "Austrijsko" },
-                new Citizenship { ID = 4, Name = "Švicarsko" });
+                new Citizenship { ID = 4, Name = "Švicarsko" },
+                new Citizenship { ID = 5, Name = "Rusko" },
+                new Citizenship { ID = 6, Name = "Švedsko" },
+                new Citizenship { ID = 7, Name = "Španjolsko" },
+                new Citizenship { ID = 8, Name = "Slovensko" },
+                new Citizenship { ID = 9, Name = "Slovačko" },
+                new Citizenship { ID = 10, Name = "Irsko" },
+                new Citizenship { ID = 11, Name = "Francusko" },
+                new Citizenship { ID = 12, Name = "Finsko" },
+                new Citizenship { ID = 13, Name = "Mađarsko" },
+                new Citizenship { ID = 14, Name = "Srpsko" },
+                new Citizenship { ID = 15, Name = "Rumunjsko" },
+                new Citizenship { ID = 16, Name = "Albansko" },
+                new Citizenship { ID = 17, Name = "Grčko" },
+                new Citizenship { ID = 18, Name = "Poljsko" });
             context.Volunteers.AddOrUpdate(
                 new Volunteer
                 {

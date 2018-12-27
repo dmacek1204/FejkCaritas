@@ -49,7 +49,7 @@ namespace FejkCaritas2.Mappers
         {
             var result = new Volunteer()
             {
-                ID = 0,
+                ID = view.ID,
                 FirstName = view.FirstName,
                 LastName = view.LastName,
                 OIB = view.OIB,
