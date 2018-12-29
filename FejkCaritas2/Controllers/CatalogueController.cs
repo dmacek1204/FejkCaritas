@@ -1,18 +1,15 @@
 ﻿using FejkCaritas2.Mappers;
+using FejkCaritas2.ServiceInterfaces;
 using FejkCaritas2.Services;
 using FejkCaritas2.Views;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace FejkCaritas2.Controllers
 {
     public class CatalogueController : ApiController
     {
-        private CatalogueService _service;
+        private ICatalogueService _service;
         private CatalogueMapper _mapper;
 
         public CatalogueController()

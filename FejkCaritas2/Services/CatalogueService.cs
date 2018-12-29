@@ -1,12 +1,11 @@
 ﻿using FejkCaritas.Models;
-using System;
+using FejkCaritas2.ServiceInterfaces;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace FejkCaritas2.Services
 {
-    public class CatalogueService
+    public class CatalogueService : ICatalogueService
     {
         private VolunteerContext _context;
 

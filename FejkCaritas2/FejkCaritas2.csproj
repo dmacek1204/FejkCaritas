@@ -108,12 +108,14 @@
     <Compile Include="Configurations\VolunteerConfiguration.cs" />
     <Compile Include="Contexts\VolunteerContext.cs" />
     <Compile Include="Controllers\CatalogueController.cs" />
+    <Compile Include="Controllers\ContractController.cs" />
     <Compile Include="Controllers\VolunteerController.cs" />
     <Compile Include="Filters\VolunteerFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mappers\CatalogueMapper.cs" />
+    <Compile Include="Mappers\ContractMapper.cs" />
     <Compile Include="Mappers\VolunteerMapper.cs" />
     <Compile Include="Migrations\201812031310511_InitialModel.cs" />
     <Compile Include="Migrations\201812031310511_InitialModel.Designer.cs">
@@ -138,11 +140,15 @@
     <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Models\VolunteeringHours.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceInterfaces\ICatalogueService.cs" />
+    <Compile Include="ServiceInterfaces\IContractService.cs" />
     <Compile Include="ServiceInterfaces\IVolunteerService.cs" />
     <Compile Include="Services\CatalogueService.cs" />
+    <Compile Include="Services\ContractService.cs" />
     <Compile Include="Services\VolunteerService.cs" />
     <Compile Include="Views\BasicVolunteerView.cs" />
     <Compile Include="Views\CitizenshipView.cs" />
+    <Compile Include="Views\ContractView.cs" />
     <Compile Include="Views\FilterResponse.cs" />
     <Compile Include="Views\SexView.cs" />
   </ItemGroup>
