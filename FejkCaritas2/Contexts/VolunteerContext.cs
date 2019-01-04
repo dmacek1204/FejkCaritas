@@ -31,7 +31,7 @@ namespace FejkCaritas.Models
         public DbSet<DocumentType> DocumentTypes { get; set; }
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<ExpenseType> ExpenseTypes { get; set; }
-        public DbSet<VolunteeringHours> Hours { get; set; }
+        public DbSet<VolunteeringHours> VolunteeringHours { get; set; }
         public DbSet<Sex> Sexes { get; set; }
         public DbSet<Citizenship> Citizenships { get; set; }
     }

@@ -20,11 +20,18 @@ namespace FejkCaritas2.Services
             return result;
         }
 
-        public IEnumerable<Contract> GetContractsForVolunteer(int volunteerID)
+        public int GetContractCountForVolunteer(int volunteerID)
         {
             var result = _context.Contracts.Where(c => c.VolunteerID == volunteerID).OrderBy(c => c.StartDate);
 
-            return result.ToList();
+            return result.Count();
+        }
+
+        public IEnumerable<Contract> GetContractsForVolunteer(int volunteerID, int pageIndex, int pageSize)
+        {
+            var result = _context.Contracts.Where(c => c.VolunteerID == volunteerID).OrderBy(c => c.StartDate);
+
+            return result.Skip(pageIndex * pageSize).Take(pageSize).ToList();
         }
 
         public bool AddContract(Contract contract)

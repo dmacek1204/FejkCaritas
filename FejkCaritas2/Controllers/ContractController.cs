@@ -19,10 +19,18 @@ namespace FejkCaritas2.Controllers
         // GET: api/Contract/Volunteer
         [HttpGet]
         [Route("api/Contract/Volunteer/{id}")]
-        public IHttpActionResult GetContractForVolunteer(int id)
+        public IHttpActionResult GetContractForVolunteer(int id, int pageIndex, int pageSize)
         {
-            var result = _service.GetContractsForVolunteer(id);
+            var result = _service.GetContractsForVolunteer(id, pageIndex, pageSize);
             var response = _mapper.MapContractCollectionToContractViewCollection(result);
+            return Ok(response);
+        }
+
+        [HttpGet]
+        [Route("api/Contract/Volunteer/{id}/Count")]
+        public IHttpActionResult GetContractCountForVolunteer(int id)
+        {
+            var result = _service.GetContractCountForVolunteer(id);
             return Ok(result);
         }
 

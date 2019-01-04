@@ -11,5 +11,7 @@ namespace FejkCaritas2.ServiceInterfaces
     {
         IEnumerable<Sex> GetSexes();
         IEnumerable<Citizenship> GetCitizenships();
+        IEnumerable<ExpenseType> GetExpenseTypes();
+        IEnumerable<DocumentType> GetDocumentTypes();
     }
 }

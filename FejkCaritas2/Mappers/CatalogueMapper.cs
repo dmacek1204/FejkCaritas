@@ -48,5 +48,45 @@ namespace FejkCaritas2.Mappers
             }
             return result;
         }
+
+        public ExpenseTypeView MapExpenseTypeModelToExpenseTypeView(ExpenseType expenseType)
+        {
+            var result = new ExpenseTypeView()
+            {
+                ID = expenseType.ID,
+                Name = expenseType.Name
+            };
+            return result;
+        }
+
+        public IEnumerable<ExpenseTypeView> MapExpenseTypeModelCollectionToExpenseTypeViewCollection(IEnumerable<ExpenseType> expenseTypes)
+        {
+            var result = new List<ExpenseTypeView>();
+            foreach (ExpenseType expenseType in expenseTypes)
+            {
+                result.Add(MapExpenseTypeModelToExpenseTypeView(expenseType));
+            }
+            return result;
+        }
+
+        public DocumentTypeView MapDocumentTypeModelToDocumentTypeView(DocumentType documentType)
+        {
+            var result = new DocumentTypeView()
+            {
+                ID = documentType.ID,
+                Name = documentType.Name
+            };
+            return result;
+        }
+
+        public IEnumerable<DocumentTypeView> MapDocumentTypeModelCollectionToDocumentTypeViewCollection(IEnumerable<DocumentType> documentTypes)
+        {
+            var result = new List<DocumentTypeView>();
+            foreach (DocumentType documentType in documentTypes)
+            {
+                result.Add(MapDocumentTypeModelToDocumentTypeView(documentType));
+            }
+            return result;
+        }
     }
 }

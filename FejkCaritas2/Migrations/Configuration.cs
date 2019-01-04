@@ -57,7 +57,7 @@
                     ID = 1,
                     Birthday = new DateTime(1971, 12, 3),
                     CitizenshipID = 1,
-                    Citizenship = new Citizenship { ID = 1, Name = "Hrvatsko" },                    
+                    Citizenship = new Citizenship { ID = 1, Name = "Hrvatsko" },
                     OIB = "11111111111",
                     Email = "email@burek.com",
                     FirstName = "Domba",
@@ -84,7 +84,7 @@
                     PotentialVolunteer = false,
                 }, new Volunteer
                 {
-                ID = 3,
+                    ID = 3,
                     Birthday = new DateTime(1957, 4, 18),
                     CitizenshipID = 2,
                     Citizenship = new Citizenship { ID = 3, Name = "Austrijsko" },

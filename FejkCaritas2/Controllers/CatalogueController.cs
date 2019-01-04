@@ -36,5 +36,23 @@ namespace FejkCaritas2.Controllers
             var response = _mapper.MapCitizenshipModelCollectionToCitizenshipViewCollection(result);
             return response;
         }
+
+        [HttpGet]
+        [Route("api/Catalogue/DocumentType")]
+        public IEnumerable<CitizenshipView> GetDocumentTypes()
+        {
+            var result = _service.GetCitizenships();
+            var response = _mapper.MapCitizenshipModelCollectionToCitizenshipViewCollection(result);
+            return response;
+        }
+
+        [HttpGet]
+        [Route("api/Catalogue/ExpenseType")]
+        public IEnumerable<CitizenshipView> GetExpenseTypes()
+        {
+            var result = _service.GetCitizenships();
+            var response = _mapper.MapCitizenshipModelCollectionToCitizenshipViewCollection(result);
+            return response;
+        }
     }
 }
