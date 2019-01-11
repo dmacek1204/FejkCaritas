@@ -109,6 +109,7 @@
     <Compile Include="Contexts\VolunteerContext.cs" />
     <Compile Include="Controllers\CatalogueController.cs" />
     <Compile Include="Controllers\ContractController.cs" />
+    <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\ExpensesController.cs" />
     <Compile Include="Controllers\VolunteerController.cs" />
     <Compile Include="Controllers\VolunteeringHoursController.cs" />
@@ -118,6 +119,7 @@
     </Compile>
     <Compile Include="Mappers\CatalogueMapper.cs" />
     <Compile Include="Mappers\ContractMapper.cs" />
+    <Compile Include="Mappers\DocumentMapper.cs" />
     <Compile Include="Mappers\ExpensesMapper.cs" />
     <Compile Include="Mappers\VolunteeringHoursMapper.cs" />
     <Compile Include="Mappers\VolunteerMapper.cs" />
@@ -142,6 +144,9 @@
     <Compile Include="Models\Contract.cs" />
     <Compile Include="Models\Document.cs" />
     <Compile Include="Models\DocumentType.cs" />
+    <Compile Include="ServiceInterfaces\IDocumentService.cs" />
+    <Compile Include="Services\DocumentService.cs" />
+    <Compile Include="Views\DocumentView.cs" />
     <Compile Include="Models\Expense.cs" />
     <Compile Include="Models\ExpenseType.cs" />
     <Compile Include="ServiceInterfaces\IExpensesService.cs" />

@@ -7,7 +7,7 @@ public class Expense
     public int Year { get; set; }
     public string Description { get; set; }
     public int ExpenseTypeID { get; set; }
-    public ExpenseType ExpenseType { get; set; }
+    public virtual ExpenseType ExpenseType { get; set; }
     public int VolunteerID { get; set; }
     public Volunteer Volunteer { get; set; }
 

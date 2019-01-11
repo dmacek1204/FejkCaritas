@@ -1,51 +1,48 @@
 ﻿using FejkCaritas2.Views;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace FejkCaritas2.Mappers
 {
     public class ExpensesMapper
     {
-        public ExpenseView MapExpenseToExpenseView(Expense contract)
+        public ExpenseView MapExpenseToExpenseView(Expense expense)
         {
             var result = new ExpenseView()
             {
-                ID = contract.ID,
-                Year = contract.Year,
-                Amount = contract.Amount,
+                ID = expense.ID,
+                Year = expense.Year,
+                Amount = expense.Amount,
                 ExpenseType = new ExpenseTypeView()
                 {
-                    ID = contract.ExpenseType.ID,
-                    Name = contract.ExpenseType.Name
+                    ID = expense.ExpenseType.ID,
+                    Name = expense.ExpenseType.Name
                 },
-                Description = contract.Description,
-                VolunteerID = contract.VolunteerID
+                Description = expense.Description,
+                VolunteerID = expense.VolunteerID
             };
             return result;
         }
 
-        public IEnumerable<ExpenseView> MapExpenseCollectionToExpenseViewCollection(IEnumerable<Expense> contractColl)
+        public IEnumerable<ExpenseView> MapExpenseCollectionToExpenseViewCollection(IEnumerable<Expense> expenseColl)
         {
             var result = new List<ExpenseView>();
-            foreach (var contract in contractColl)
+            foreach (var expense in expenseColl)
             {
-                result.Add(MapExpenseToExpenseView(contract));
+                result.Add(MapExpenseToExpenseView(expense));
             }
             return result;
         }
 
-        public Expense MapExpenseViewToExpense(ExpenseView contract)
+        public Expense MapExpenseViewToExpense(ExpenseView expense)
         {
             var result = new Expense()
             {
-                ID = contract.ID,
-                Year = contract.Year,
-                Amount = contract.Amount,
-                ExpenseTypeID = contract.ExpenseType.ID,
-                Description = contract.Description,
-                VolunteerID = contract.VolunteerID
+                ID = expense.ID,
+                Year = expense.Year,
+                Amount = expense.Amount,
+                ExpenseTypeID = expense.ExpenseType.ID,
+                Description = expense.Description,
+                VolunteerID = expense.VolunteerID
             };
             return result;
         }
